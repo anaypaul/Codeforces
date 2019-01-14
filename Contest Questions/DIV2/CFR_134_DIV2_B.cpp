@@ -22,60 +22,46 @@ int main(){
         }
         cout<<ans<<" "<<ans<<endl;
     }else{
+        vector<int> seats_max(seats);
         if(n<sum && planes == 1){
             int ansx = seats[0]*(seats[0]+1)/2;
             int k = (seats[0]-n)*(seats[0]-n+1)/2;
             cout<<ansx-k<<" "<<ansx-k<<endl;
         }else{
-            int min_ = 0;
+            //max
             int max_ = 0;
-            vector<int> seats_min(seats);
-            sort(seats_min.begin(),seats_min.end());
-
-
-
-            int i = 0;
-            int j = 0;
-            int done = 0;
-            while(i<n){
-                while(seats_min[j]>0){
-                    min_ += seats_min[j];
-                    seats_min[j]--;
-                    i++;
-                    if(i==n){
-                        done = 1;
-                        break;
+            for( int i = 0;i<n;i++){
+                int max_index = -1;
+                for(int j = 0;j<planes;j++){
+                    if(seats_max[j] && (max_index < 0 || seats_max[j] > seats_max[max_index] ) ){
+                        max_index = j;
                     }
                 }
-                if(done == 1){
-                    break;
-                }else{
-                    j++;
+                if( max_index < 0){
+                    continue;
                 }
-            } 
-            sort(seats.begin(),seats.end());
-            reverse(seats.begin(),seats.end());
-            i = 0;
-            j = 0;
-            done = 0;
-            while(i<n){
-                while(seats[j]>=seats[j+1]){
-                    max_ += seats[j];
-                    seats[j]--;
-                    i++;
-                    if(i==n){
-                        done = 1;
-                        break;
-                    }
-                }
-                
-                if(done==1){
-                    break;
-                }else{
-                    j = (j +1)%seats.size();
-                }
+                max_ += seats_max[max_index];
+                --seats_max[max_index];
             }
-            cout<<max_<<" "<<min_<<endl;
+            cout<<max_<<" ";
+
+
+            //min
+            int min_=0;
+            for(int i = 0;i<n;i++){
+                int min_index = -1;
+                for(int j = 0;j<planes;j++){
+                    if(seats[j] && (min_index <0 || seats[j] < seats[min_index])){
+                        min_index = j;
+                    }
+                }
+                if(min_index < 0){
+                    continue;
+                }
+                min_ += seats[min_index];
+                --seats[min_index];
+            }
+            cout<<min_<<endl;
         }
     }
 
