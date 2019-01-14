@@ -32,6 +32,8 @@ int main(){
             vector<int> seats_min(seats);
             sort(seats_min.begin(),seats_min.end());
 
+
+
             int i = 0;
             int j = 0;
             int done = 0;
