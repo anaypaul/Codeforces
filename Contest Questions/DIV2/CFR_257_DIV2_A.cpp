@@ -16,6 +16,7 @@ int main(){
         if(arr[i]>0){
             arr[i] = arr[i] - m;
             if( arr[i] <= 0 ){
+                cout<<"last index:"<<last_index<<endl;
                 last_index = i;
                 count++;
             }

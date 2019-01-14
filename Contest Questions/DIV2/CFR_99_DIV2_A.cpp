@@ -27,6 +27,7 @@ int main(){
             }
         }
     }else{
+        
         for(int i = pages.size()-1;i>=0;i--){
             if(pages[i]>0){
                 cout<<i+1<<endl;

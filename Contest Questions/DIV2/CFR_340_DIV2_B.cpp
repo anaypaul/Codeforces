@@ -25,9 +25,9 @@ int main(int argc, char const *argv[])
             flips++;
         }
     }
-    cout<<"flips ="<<flips<<" count_1 ="<<count_1<<endl;
+    // cout<<"flips ="<<flips<<" count_1 ="<<count_1<<endl;
     if(n==count_1){
-        cout<<"answer ="<<1<<endl;
+        cout<<1<<endl;
     }else{
         if(flips <= count_1){
             cout<<flips<<endl;

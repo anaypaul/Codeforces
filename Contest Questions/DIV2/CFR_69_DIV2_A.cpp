@@ -15,14 +15,10 @@ void seive(){
             }
         }
     }
-
-
-
     for(int i=0;i<101;i++){
         if(isPrime[i]==1){
             primes.push_back(i);
         }
-        
     }
 }
 int main(){
