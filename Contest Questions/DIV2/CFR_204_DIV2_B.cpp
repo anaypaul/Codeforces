@@ -3,6 +3,7 @@
 #include<utility>
 #include<vector>
 using namespace std;
+
 // int main(){
 //     vector<pair<int,int> >answer;
 //     int n;
@@ -81,6 +82,7 @@ using namespace std;
 //     }
 //     return 0;
 // }
+//optimized version below.
 int main(){
     int n;
     cin>>n;
