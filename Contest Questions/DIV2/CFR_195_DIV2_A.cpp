@@ -10,11 +10,13 @@ int main(){
     cout<<sqrt(2*(x*x+y*y))<<endl;
     int val = (int)floor(sqrt(2*(x*x+y*y))-0.5);
     if(x>=0 && y>=0){
+        val = x+y;
         x1 = 0;
         y1 = val;
         x2 = val;
         y2 = 0;
     }else if(x<=0 && y>=0){
+        val = x - y;
         x1 = -1 * val;
         y1 = 0;
         y2 = val;
